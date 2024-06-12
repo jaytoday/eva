@@ -1,10 +1,9 @@
 EXPLAIN 
-====
+========
 
-EXPLAIN QUERY
-----
+.. _explain:
 
-List the query plan associated with a EVAQL query
+List the query plan associated with a EvaDB query
 
 Append ``EXPLAIN`` in front of the query to retrieve the plan.
 

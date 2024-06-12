@@ -72,8 +72,9 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-api-docs/_build/
+# generated documenation files
+/docs/_build
+/docs/source/**/doc/
 
 # PyBuilder
 target/
@@ -100,6 +101,7 @@ env.bak/
 venv.bak/
 env38/
 env_eva/
+test_eva_db/
 
 # Spyder project settings
 .spyderproject
@@ -180,7 +182,13 @@ tutorials/*.py
 *.pth
 *.pt
 tutorials/bddtest.zip
+tutorials/license.zip
+tutorials/reddit-images.zip
+tutorials/reddit-images
+license/
 bddtest/
+tutorials/*.jpg
+tutorials/*.pdf
 
 # benchmark
 .benchmarks
@@ -188,3 +196,33 @@ eva.txt
 prof/
 output.txt
 MagicMock/
+queries.txt
+dep.txt
+
+*.bak
+\<Magic*
+
+# data
+*eva_data/
+*evadb_data/
+
+# models, but not apply to codebase
+models/
+!evadb/models
+!evadb/catalog/models
+!test/unit_tests/models
+!test/unit_tests/catalog/models
+
+
+# test files
+test.py
+
+# faiss
+*.faiss
+eva_db/*
+*.txt
+
+# older code
+eva/*
+
+blog.md

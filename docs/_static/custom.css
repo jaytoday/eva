@@ -1,115 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+/*********************************/
+/****  CUSTOM CSS FOR EvaDB  *****/
+/*********************************/
 
-:root {
-  --orange: #FF9300;
+ /* Inspired  by https://github.com/ray-project/ray/blob/692428a67e65d2f055f828ed6331cf5fbe732b02/doc/source/_static/css/custom.css */
+
+
+/* --------- custom fonts --------- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap');
+
+ :root {
+    --black: #15141A;
 }
-
-body {font-family: 'Source Serif Pro', serif;}
-aside, table {font-family: 'Source Sans Pro', sans-serif;}
-
-
-/*aside.sidebar-drawer {background: #ABC;}
-aside.sidebar-drawer div.sidebar-container {background: #acb;}
-div.content {background: #bca;}
-div.article-container {background: #bac;}
-aside.toc-drawer {background: #bbb};}
-aside.toc-drawer {background: #cba}
-article aside.sidebar {background: #ccc;}
-*/
 
 /* --------- left and right TOCs --------- */
 
-.sidebar-drawer {
-    width: calc(50% - 28em);
-    min-width: 13em;
-}
-.sidebar-container, .toc-drawer {
-    width: 12em;
+.sidebar-tree .caption {
+    font-size: 100%;
 }
 
-/* --------- asides --------- */
-
-article .sidebar {
-    width: 100%;
-    position: relative;
-    float: none;
-    margin: 2em 0;
-    background: none; border: none;
-}
-article aside.sidebar {
-    border: 1px solid #999;
-    border-left: 2px solid #999;
-    border-radius: 0;
-}
-article .sidebar>* {
-    font-size: 90%;
-    border: none
-}
-article .sidebar p.sidebar-title {
-    border: none;
-    font-weight: 600;
+.sidebar-logo {
+    max-width: 20%;
 }
 
-/* --------- widths at different breakpoints --------- */
-/*  break out content asides and images at 52em */
-
-@media only screen and (min-width: 52em) {
-    .content {
-        position: relative;
-        padding: 0 1em 0 15em;
-        width: 36em;
-    }
-    article .sidebar,
-    h2 {
-        position: absolute; left: 0;
-        width: 12rem;
-        margin: -2rem 2rem 0 1rem;
-        padding-top: 2rem;
-        text-align: right;
-        background: none;
-    }
-    article aside.sidebar {border: none;}
-    article .sidebar>:first-child {margin-top: 0;}
-    article .sidebar>*,
-    article .sidebar .sidebar-title {padding-left: 0; padding-right: 0;}
-    img.wider, table.wider, figure.wider, hr {
-        width: 50em; max-width: 50em;
-        margin: 2em 0;
-        left: -14em;
-        position: relative;
-    }
-    article .sidebar>ol, article .sidebar>ul {text-align: left; padding-left: 1.2rem;}
-    img.floated {
-        width: 50%;
-        float: right;
-        margin-bottom: 1rem; margin-left: 1rem;
-    }
-    h2>.headerlink,
-    .sidebar p .headerlink {
-        position: absolute; top: 0; right: 0;
-    }
-    h2 + * {margin-top: 2rem;}
-}
-
-@media only screen and (min-width: 67em) {
-    .content {padding: 0 1em 0 17em;}
-    article .sidebar,
-    h2 {width: 14rem;}
-    img.wider, table.wider, figure.wider, hr {
-        width: 52em; max-width: 52em;
-        margin: 2em 0;
-        left: -16em;
-        position: relative;
-    }
-}
-
-@media only screen and (min-width: 82em) {
-    .content {padding: 0 3em 0 17em;}
-}
-
-/* --------- headings --------- */
-
-h1 {font-size: 2rem;}
+.sidebar-brand-text {
+    font-size: 17px; /* Adjust the value as needed */
+  }
 
 /* --------- misc --------- */
 
@@ -117,81 +32,195 @@ p.rubric {
     text-transform: none;
     font-style: italic;
     font-weight: 400;
-    font-size: 110%;
+    font-size: 100%;
 }
 
-hr.docutils {background-color: var(--orange);}
 
-blockquote.epigraph {
-    border-left: none;
-    padding: 1em 0 1em 3em;
-}
-blockquote p.attribution {padding-left: 3em; font-style: normal;
-
-/*    margin: 0 3em;
-    padding-bottom: 2em;
-*/}
-
-figcaption {text-align: right; font-style: italic;}
-
-div.lined div.sd-col:nth-child(2n) {border-bottom: 1px solid var(--orange);}
-
-@media only screen and (min-width: 36em) {
-    div.lined div.sd-col {border-bottom: 1px solid var(--orange);}
+hr.docutils {
+    background-color: var(--black);
 }
 
-a:link, a:visited {color: var(--orange);}
-
-/* --------- TOC sidebar --------- */
-
-div.sidebar-tree .toctree-l1>.reference {color: #666;}
-div.sidebar-tree .toctree-l1>.reference:hover {color: var(--orange);}
-
-div.sidebar-tree ul {
-    border-bottom: 1px solid var(--orange);
-    padding: 1em 0;
+figcaption {
+    text-align: right;
+    font-style: italic;
 }
 
-input.sidebar-search {border: none;}
+div.lined div.sd-col:nth-child(2n) {
+    border-bottom: 1px solid var(--black);
+}
 
-/* --------- embed --------- */
-
-.embed-responsive {
-  position: relative;
-  width: 100%;
-}
-.embed-responsive:before {
-  display: block;
-  content: "";
-}
-.embed-responsive-item,
-.embed-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.embed-responsive-16by9::before {
-    padding-top: 56.25%;
-}
-.embed-responsive-4by3::before {
-    padding-top: 75%;
-}
+article table.align-default {
+    display: inherit;
+}  
 
 /* --------- furniture --------- */
 
-.nav-overlay-icon .icon svg, .toc-overlay-icon .icon svg, .theme-toggle svg {color: var(--orange);}
+.toc li {
+    padding-left: 20px; /* Adjust the indentation value as needed */
+ }
 
-.toc-tree li.scroll-current>.reference {color: var(--orange);}
 
-/* --------- tables --------- */
+ /* sphinx-panels overrides the content width to 1140 for large displays.*/
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1400px !important;
+    }
+}
 
-.table-wrapper {overflow-x: visible;}
-table.docutils {box-shadow: none;}
-table.docutils th.head {padding: .5rem 0;}
-table.docutils td, table.docutils th {border-right: 1px solid var(--orange);}
-table.docutils th.stub {text-align: right;}
-table.docutils tr:last-child td,
-table.docutils tr:last-child th {border-bottom: none;}
-table.docutils thead {border-bottom: 1px solid var(--orange);}
+
+.image-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+    padding-right:16px;
+    gap: 16px;
+}
+
+.info-box {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.info-box:hover{
+    outline: 2px solid var(--black); /* Color change on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.info-box-2 {
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 24px;
+    padding-top: 4px;
+}
+
+
+.bold-link {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+.community-box {
+    border: 1px solid #D2DCE6;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.community-box:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+.community-box p {
+    margin-top: 1rem !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 16px;
+}
+
+.grid-item {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.grid-item:hover {
+    background-color: var(--black); /* Color change on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+
+
+
+.topnav {
+    /* background-color: white; */
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+}
+
+/* Content wrapper for the unified nav link / menus */
+.top-nav-content {
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  /* If the window is too small, hide the custom sticky navigation bar at the top of the page.
+
+  */
+    .top-nav-content {
+        display: none;
+    }
+    div.header-article.row.announcement-content.noprint {
+      position: sticky;
+      top: 0;
+    }
+}
+
+/* Styling the links and menus in the top nav */
+.top-nav-content a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.top-nav-content a:hover {
+    color: var(--black);
+}
+
+/* The left part are the links and menus */
+.top-nav-content > .left {
+    display: flex;
+    white-space: nowrap;
+}
+
+.top-nav-content .left > * {
+    margin-right: 8px;
+}
+
+.top-nav-content .left > a,
+.top-nav-content .left > .menu > a {
+    text-align: center;
+    padding: 10px 12px;
+    /* border-bottom: 2px solid white; */
+}
+
+.top-nav-content .menu:hover > a,
+.top-nav-content .left > a:hover {
+    border-bottom: 2px solid var(--black);
+}
+
+/* Special styling for logo */
+
+.top-nav-content .left > a.evadb-logo {
+    width: 150px;
+    height: 34px;
+    padding: 1px 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 0px;
+}
+
+.top-nav-content .left > a.evadb-logo:hover {
+    border-bottom: 0px solid white;
+}
+
+.evadb-logo svg {
+    max-width: 100%;
+    max-height: 100%;
+}
